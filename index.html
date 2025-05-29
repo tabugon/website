@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Portfolio</title>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background: #753e3e;
+    color: #553838;
+    line-height: 1.6;
+    
+  }
+
+  header {
+    background: #ececec;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  }
+
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #131212;
+  }
+
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+
+  .photo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .photo-container img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #61dafb;
+    box-shadow: 0 0 15px #61dafb;
+    animation: pulse 3s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 15px #61dafb; }
+    50% { box-shadow: 0 0 30px #21a1f1; }
+  }
+
+  section {
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  h2 {
+    border-bottom: 3px solid #61dafb;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .project-card {
+    background: #222;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 0 10px #61dafb33;
+    transition: transform 0.3s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #61dafb99;
+  }
+  .project-card h3 {
+    margin-top: 0;
+    color: #61dafb;
+  }
+  .project-card p {
+    font-size: 0.9rem;
+    color: #faf6f6;
+  }
+  .project-card a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #21a1f1;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .project-card a:hover {
+    text-decoration: underline;
+  }
+
+  .about-section > div {
+    margin-bottom: 25px;
+  }
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .skill {
+    background: #030303;
+    color: #121212;
+    padding: 6px 14px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 0 5px #21a1f1;
+  }
+ body {
+    font-family: LucidaHandwriting;
+    background-color: #c49393;
+    margin: 20px;
+  }
+  .skills {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+  }
+  .skill {
+    flex: 1 1 calc(33.33% - 20px); 
+    background-color: #4b4343;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    color: #f4f4f4;
+  }
+
+ 
+  @media (max-width: 768px) {
+    .skill {
+      flex: 1 1 100%;
+      
+    }
+  }
+
+  .social-links {
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+  }
+  .social-links a {
+    color: #61dafb;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  .social-links a:hover {
+    color: #21a1f1;
+  }
+ @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+  }
+  
+
+  .bounce {
+    width: 150px;
+    animation: bounce 2s infinite;
+  }
+ @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+  }
+  
+
+  .bounce {
+    width: 150px;
+    animation: bounce 2s infinite;
+  }   /* Reset default styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+ 
+  .video-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+    object-fit: cover; 
+  }
+
+ 
+  .content {
+    position: relative;
+    z-index: 1; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    padding: 20px;
+    text-align: center;
+  }
+
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2em;
+    max-width: 600px;
+  }
+  
+</style>
+</head>
+<body>
+  
+<header>
+  <h1>My Portfolio</h1>
+</header>
+
+<main>
+
+  <div class="photo-container">
+    <img src="kyuttt.jpg" />
+  </div>
+
+  <section id="projects">
+    <h2>Showcase of My Work</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>A web app that tracks your daily tasks efficiently and beautifully.</p>
+            <a href="luhhhh.mp4">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>Interactive data visualization dashboard with real-time updates.</p>
+        <a href="https://store.steampowered.com/" target="_blank" rel="noopener">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>Mobile-friendly portfolio website with smooth animations and UI.</p>
+        <a href="https://tailornova.com/" target="_blank" rel="noopener">View Project</a>
+      </div>
+    </div>
+  </section>
+  
+  <video autoplay muted loop playsinline>
+    <source src="giahh.mp4" type="video/mp4" />
+
+  </video>
+
+  <div class="content">
+    <h1>About Me</h1>
+    <p "Hi, <b>I'm Stefhanie B. Tabugon</b>,  21-year-old . <b>Bachelor of Science in Information Technology</b>. </p>
+  </div>
+</div>
+
+    <div class="skills">
+      <h3>Skills</h3>
+      <div class="skills-list">
+        <span class="skill">Web Development
+            <p>Proficient in front-end and back-end development using HTML, CSS, JavaScript, and PHP. Experienced in building responsive 
+                and dynamic websites that offer seamless user experiences.</p> </span>
+
+          <span class="skill"><b>/UX Design</b> <p>Skilled in designing user interfaces that are both visually appealing and easy to navigate. 
+                   Knowledgeable in wireframing, prototyping, and implementing user-centered design principles.</p></span>
+        <span class="skill"><b>Database Management</b> <p>Experienced in managing and integrating MySQL databases for web applications. Capable of designing efficient database structures and 
+            handling data securely.</p></span>
+      </div>
+    </div>
+
+    <div class="experience">
+      <h2><b>Experience</b></h2>
+     <b>🏃‍♀️ Track & Field Athlete (Elementary to High School)</b>
+
+ <p>Actively participated in various inter-school track and field competitions, developing strong discipline, endurance, and sportsmanship from a young age.</p>
+
+<b>🏸 Varsity Badminton Player – STI College Batangas</b>
+<p>Proud member of the STI College Batangas varsity badminton team. Gained valuable experience in teamwork, competitive sports, and maintaining physical fitness.
+</p>
+<b>🎤 Passionate Singer & Dancer</b>
+
+<p>Regular performer in school events and local programs. Known for strong stage presence and versatility in both singing and dancing.</p>
+
+<b>🎸 Guitar Enthusiast</b>
+
+<p>Self-taught guitar player with a deep appreciation for music. Frequently performs solo or in group settings, blending creativity with rhythm.</p>
+   <div style="text-align: center;">
+  <img src="hh.jpg" alt="Bounce" class="bounce"  alt="Centered Image" width="200" height="150"  />
+</div>
+ 
+
+    <div class="achievements">
+      <h2><b>Achievements</b></h2>
+      <ul>
+        <li><h2>With Honors – Taysan National Integrated High School</h2>
+         <h3>Graduated with honors, reflecting consistent academic excellence and dedication throughout elementary to senior high school.</h3></li>
+         <div style="text-align: center;">
+  <img src="mema.jpg" alt="Bounce" class="bounce" alt="Centered Image" width="200" height="150"  />
+</div>
+        <li><h2>STI College Batangas Varsity Athlete</h2>
+            <h3>Selected as a varsity player, representing STI College Batangas in badminton—showcasing commitment, athletic skill, and team spirit.</h3> </li>
+     
+            <li><h2>Passed Private Technology Training Exam</h2> 
+           <h3>Successfully passed a competitive exam for private technology training, demonstrating strong technical aptitude and readiness for advanced IT learning.</h3> </li>
+        
+        </ul>
+    </div>
+
+    <div class="social-media">
+      <h3>Find me on</h3>
+      <div class="social-links">
+        <a href="https://Facebook.com/giah" target="_blank" aria-label="Facebook" rel="noopener"><img src="facebook.png" width="20" height="20" alt=""></a>
+        <a href="https://linkedin.com/in/Stefhanie17" target="_blank" aria-label="LinkedIn" rel="noopener">🔗</a>
+        <a href="https://twitter.com/Stefhanie17" target="_blank" aria-label="Twitter" rel="noopener">🐦</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+
+  const sections = document.querySelectorAll('section');
+
+  function revealSections() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+
+      if(sectionTop < triggerBottom) {
+        section.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealSections);
+  window.addEventListener('load', revealSections);
+</script>
+
+</body>
+</html>
